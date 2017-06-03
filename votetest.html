@@ -1,0 +1,58 @@
+<html>
+<head>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<script>
+function getVote(int) {
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else {  // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("poll").innerHTML=this.responseText;
+    }
+  }
+  xmlhttp.open("GET","poll_vote.php?vote="+int,true);
+  xmlhttp.send();
+}
+</script>
+</head>
+<center>
+<a href="http://smallorangehands.com/" rel="home">
+<img src="http://smallorangehands.com/soh.png" width="100%" onclick="hi()">
+</a>
+</center>
+<script>
+function hi()
+{
+document.cookie = "vote=1; expires=Sat, 20 May 2018 00:00:00 EST;";
+}
+</script>
+
+<body>
+<div id="poll">
+<center>
+<h3>Vote For The Video That You Think Is The Best</h3>
+<br><br>
+<form>
+<iframe class="youtube-player" type="text/html" src="http://www.youtube.com/embed/VKddUoxX4UE?version=3&amp;rel=1&amp;fs=1&amp;autohide=2&amp;showsearch=0&amp;showinfo=1&amp;iv_load_policy=1&amp;wmode=transparent" allowfullscreen="true" style="border: 0px; display: block; margin: 0px; width: 345px; height: 202.688px;" data-ratio="0.5875" data-width="1200" data-height="705"></iframe>
+<br><br>
+<button type="button" name="vote" value="0" onclick="getVote(this.value)"> Vote For Pets</button>
+<br><br>
+<br><br>
+<iframe class="youtube-player" type="text/html" src="http://www.youtube.com/embed/yES2lsxODBA?version=3&amp;rel=1&amp;fs=1&amp;autohide=2&amp;showsearch=0&amp;showinfo=1&amp;iv_load_policy=1&amp;wmode=transparent" allowfullscreen="true" style="border: 0px; display: block; margin: 0px; width: 345px; height: 202.688px;" data-ratio="0.5875" data-width="1200" data-height="705"></iframe>
+<br><br>
+<button type="button" name="vote" value="1" onclick="getVote(this.value)"> Vote For Voices</button></td>
+<br><br>
+<br><br>
+<iframe class="youtube-player" type="text/html" src="http://www.youtube.com/embed/8mliMJpprCY?version=3&amp;rel=1&amp;fs=1&amp;autohide=2&amp;showsearch=0&amp;showinfo=1&amp;iv_load_policy=1&amp;wmode=transparent" allowfullscreen="true" style="border: 0px; display: block; margin: 0px; width: 345px; height: 202.688px;" data-ratio="0.5875" data-width="1200" data-height="705"></iframe>
+<br><br>
+<button type="button" name="vote" value="2" onclick="getVote(this.value)"> Vote For Sticks & Stones</button>
+</form>
+</form>
+</div>
+</center>
+</body>
+</html>
